@@ -1,0 +1,53 @@
+.create-note-container {
+	background: rgba(255, 255, 255, 0.952);
+	padding: 20px;
+	border-radius: 10px;
+	width: 90%;
+	margin: 100px auto;
+}
+.create-note-container h1 {
+	font-size: 2rem;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.create-note-container .note-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.create-note-container input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.create-note-container textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	height: 200px;
+}
+.create-note-container button {
+	width: 30%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background: #fff;
+	color: #000;
+	outline-offset: 0;
+	cursor: pointer;
+}
+.create-note-container .btn-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.create-note-container button:hover {
+	box-shadow: inset 0 0 0 2px #fff;
+}

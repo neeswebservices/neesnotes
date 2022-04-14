@@ -1,0 +1,41 @@
+:root {
+	--background: #fff;
+	--darkbackground: #727272;
+	--lightcolor: #333;
+	--darkcolor: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #efefef;
+}
+html {
+	scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
+#error {
+	color: red;
+	padding: 10px 0px;
+}
+
+footer {
+	background-color: #fff;
+	box-shadow: 0px -1px 10px 0 #e6e6e6;
+	padding: 20px;
+	text-align: center;
+	font-size: 1rem;
+	color: #000;
+}
+
+@import url('./styles/header.css');
+@import url('./styles/notes.css');
+@import url('./styles/singlenote.css');
+@import url('./styles/edit.css');
+@import url('./styles/login.css');
