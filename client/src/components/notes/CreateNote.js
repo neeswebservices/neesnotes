@@ -12,12 +12,16 @@ export default function CreateNote() {
 	});
 
 	const createNote = async () => {
-		const res = await axios.post('http://localhost:8080/api/notes', note, {
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: localStorage.getItem('token'),
-			},
-		});
+		const res = await axios.post(
+			'https://neesnotes.herokuapp.com/api/notes',
+			note,
+			{
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: localStorage.getItem('token'),
+				},
+			}
+		);
 		if (res.data.msg === 'Created note sucessfully !') {
 			setNote({
 				title: '',

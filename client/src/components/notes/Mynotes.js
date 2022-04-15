@@ -7,7 +7,7 @@ export default function Mynotes() {
 
 	const getNote = async () => {
 		const allnotes = await axios.get(
-			'http://localhost:8080/api/notes/mynotes',
+			'https://neesnotes.herokuapp.com/api/notes/mynotes',
 			{
 				headers: {
 					Authorization: localStorage.getItem('token'),

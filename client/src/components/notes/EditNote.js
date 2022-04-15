@@ -13,11 +13,14 @@ export default function CreateNote() {
 
 	useEffect(() => {
 		const fetchnote = async () => {
-			const res = await axios.get(`http://localhost:8080/api/notes/${id}`, {
-				headers: {
-					Authorization: localStorage.getItem('token'),
-				},
-			});
+			const res = await axios.get(
+				`https://neesnotes.herokuapp.com/api/notes/${id}`,
+				{
+					headers: {
+						Authorization: localStorage.getItem('token'),
+					},
+				}
+			);
 			if (res.data <= 0) {
 				return navigate('/mynotes');
 			}

@@ -18,11 +18,14 @@ export default function Login({ setLogin }) {
 	const registerSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const res = await axios.post('http://localhost:8080/api/user/auth/', {
-				username: user.username,
-				email: user.email,
-				password: user.password,
-			});
+			const res = await axios.post(
+				'https://neesnotes.herokuapp.com/api/user/auth/',
+				{
+					username: user.username,
+					email: user.email,
+					password: user.password,
+				}
+			);
 
 			setUser({ username: '', email: '', password: '' });
 			setError(res.data.msg);
@@ -34,7 +37,7 @@ export default function Login({ setLogin }) {
 		e.preventDefault();
 		try {
 			const res = await axios.post(
-				'http://localhost:8080/api/user/auth/login',
+				`https://neesnotes.herokuapp.com/api/user/auth/login`,
 				user
 			);
 			if (res.data.token) {

@@ -7,11 +7,14 @@ export default function Home() {
 	const [notes, setNotes] = useState([]);
 
 	const getNote = async () => {
-		const allnotes = await axios.get('http://localhost:8080/api/notes', {
-			headers: {
-				Authorization: localStorage.getItem('token'),
-			},
-		});
+		const allnotes = await axios.get(
+			'https://neesnotes.herokuapp.com/api/notes',
+			{
+				headers: {
+					Authorization: localStorage.getItem('token'),
+				},
+			}
+		);
 		setNotes(allnotes.data);
 	};
 
