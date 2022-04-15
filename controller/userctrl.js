@@ -13,8 +13,12 @@ const userctrl = {
 			const user = await User.findOne({ email });
 			const user1 = await User.findOne({ username });
 
-			if (user) return res.json({ msg: 'User already exists ! ' });
+			if (user) return res.json({ msg: 'Useremail already exists ! ' });
+
 			if (user1) return res.json({ msg: 'Username already exists ! ' });
+
+			if (username.length < 5)
+				return res.json({ msg: 'Username must be atleast 5 characters ! ' });
 
 			const passwordHash = await bcrypt.hash(password, 12);
 
@@ -32,7 +36,7 @@ const userctrl = {
 	},
 	loginuser: async (req, res, next) => {
 		try {
-			const { email, password } = req.body;
+			const { email, password, username } = req.body;
 
 			if (!email || !password)
 				return res.json({ msg: 'Please enter all the fields ' });
